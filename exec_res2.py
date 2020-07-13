@@ -71,13 +71,13 @@ def stirrer(val):
 def lift(val):
 	print('lift value: ', val)
 
-	if (val == -1):
+	if (val == -1): # TURN_BACK
 		ctl.DOUT(Lift_pin,1)
 		ctl.DOUT(Lift2_pin,0)
-	elif (val == 1):
+	elif (val == 1): # TURN_OFF
 		ctl.DOUT(Lift_pin,0)
 		ctl.DOUT(Lift2_pin,0)
-	elif (val == 0):
+	elif (val == 0): # TURN_ON
 		ctl.DOUT(Lift_pin,0)
 		ctl.DOUT(Lift2_pin,1)
 
@@ -100,10 +100,6 @@ def cleaning_pump(val):
 	print('cleaning_pump value: ', val)
 
 	ctl.DOUT(Cleaning_Pump_pin,val)
-
-# #---Thyristor Power Regulator-------------------------------------------
-# def tpr(val):
-# 	ctl.DOUT(TPR_pin,val)
 
 #---Parse Data----------------------------------------------------------
 def json_to_val(json_val):

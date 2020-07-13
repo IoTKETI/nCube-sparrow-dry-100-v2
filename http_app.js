@@ -1353,6 +1353,9 @@ function res_start_btn(val) {
             dryer_event |= EVENT_START_BTN_LONG;
             start_press_count = 0;
         }
+        else{
+            dry_data_block.start_btn = 0;
+        }
 
         start_press_flag = 0;
         start_press_count = 0;
@@ -1729,6 +1732,7 @@ function dryer_event_handler() {
 
     else if (dryer_event & EVENT_START_BUTTON) {
         dryer_event &= ~EVENT_START_BUTTON;
+        // dry_data_block.start_btn = 1;
         if (dry_data_block.state == 'INPUT') {
             dry_data_block.debug_message = '              ';
             
@@ -1767,12 +1771,12 @@ function dryer_event_handler() {
     
     else if(dryer_event & EVENT_START_BTN_LONG) {
         dryer_event &= ~EVENT_START_BTN_LONG;
-
+        // dry_data_block.start_btn = 2;
         if (dry_data_block.state == 'INPUT') {
             dry_data_block.debug_message = 'Reset the catalyst';
             pre_debug_message = '';
             set_buzzer();
-        
+
             dry_data_block.cum_weight = 0;
         }
      }
