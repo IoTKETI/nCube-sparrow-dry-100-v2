@@ -1344,6 +1344,7 @@ function res_start_btn(val) {
             dryer_event |= EVENT_START_BUTTON;
             
             start_press_count = 0;
+
         }
         else if(start_press_flag == 2) {
             dry_data_block.start_btn = 2;
@@ -1352,9 +1353,6 @@ function res_start_btn(val) {
 
             dryer_event |= EVENT_START_BTN_LONG;
             start_press_count = 0;
-        }
-        else{
-            dry_data_block.start_btn = 0;
         }
 
         start_press_flag = 0;
